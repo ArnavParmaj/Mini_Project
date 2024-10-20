@@ -37,7 +37,7 @@ fun Seven() {
             modifier = Modifier
                 .fillMaxSize()
                 .padding(16.dp)
-                .background(Color.White.copy(alpha = 0.8f)) // Semi-transparent white background
+                .background(Color.White.copy(alpha = 0f)) // Semi-transparent white background
         ) {
             // Members Section
             Text(
