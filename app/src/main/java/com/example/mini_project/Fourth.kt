@@ -1,11 +1,14 @@
 package com.example.mini_project
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -17,6 +20,12 @@ fun Fourth(navigationToFirst: () -> Unit, navController: NavController) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
+        Image(
+            painter = painterResource(id = R.drawable.bgm), // Replace with your image name
+            contentDescription = "Background Image",
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop // Adjusts image to fill the screen
+        )
         // Main content without background image
         Column(
             modifier = Modifier
