@@ -16,7 +16,7 @@ import com.example.mini_project.R
 @Composable
 fun QuizCreationScreen() {
     var quizTitle by remember { mutableStateOf("") }
-    val questions = remember { List(5) { QuestionState() } }
+    val questions = remember { List(1) { QuestionState() } }
 
     Box(
         modifier = Modifier

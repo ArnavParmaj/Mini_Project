@@ -20,38 +20,57 @@ import androidx.compose.ui.draw.clip
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.mini_project.R
-
 @Composable
 fun Sixth(navController: NavHostController) {
     val backgroundImage: Painter = painterResource(id = R.drawable.bgm) // Background image
 
-    var description by remember { mutableStateOf(TextFieldValue("GDSC is a global community of university students passionate about technology. Supported by Google, it provides opportunities for students to learn, build, and network in various tech areas through workshops, events, and projects.")) }
+    var description by remember {
+        mutableStateOf(
+            TextFieldValue(
+                "GDSC is a global community of university students passionate about technology. " +
+                        "Supported by Google, it provides opportunities for students to learn, build, and " +
+                        "network in various tech areas through workshops, events, and projects."
+            )
+        )
+    }
 
     Box(modifier = Modifier.fillMaxSize()) {
         // Background Image
         Image(
             painter = backgroundImage,
             contentDescription = null,
-            modifier = Modifier.fillMaxSize().align(Alignment.Center)
+            modifier = Modifier
+                .fillMaxSize()
+                .align(Alignment.Center)
         )
 
         // Main content
         Column(
-            modifier = Modifier.fillMaxSize().padding(16.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            // Buttons Row
+            // Buttons Row with Members, Quiz, and Posts
             Row(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 16.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 16.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                Button(onClick = { navController.navigate("seven") })
-                {
+                Button(onClick = { navController.navigate("seven") }) {
                     Text("Members")
                 }
+                Button(onClick = { navController.navigate("quiz") }) {
+                    Text("Quiz")
+                }
+                Button(onClick = { navController.navigate("posts") }) {
+                    Text("Posts")
+                }
             }
+
             // Club Page Title
             Text(
                 text = "Club Page",
@@ -99,7 +118,6 @@ fun Sixth(navController: NavHostController) {
                 )
                 AchievementCard(year = "2024", achievement = "Best Club Award")
                 AchievementCard(year = "2023", achievement = "Top Tech Community")
-                // Add more rows as needed
             }
         }
     }
@@ -108,12 +126,16 @@ fun Sixth(navController: NavHostController) {
 @Composable
 fun AchievementCard(year: String, achievement: String) {
     Card(
-        modifier = Modifier.fillMaxWidth().padding(bottom = 8.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(bottom = 8.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {

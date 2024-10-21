@@ -107,22 +107,6 @@ fun PreviewQuizDisplayScreen() {
             options[2].value = "Jupiter"
             options[3].value = "Saturn"
             correctAnswer = "B"
-        },
-        QuizQuestionState().apply {
-            questionText = "What is the largest ocean on Earth?"
-            options[0].value = "Atlantic Ocean"
-            options[1].value = "Indian Ocean"
-            options[2].value = "Arctic Ocean"
-            options[3].value = "Pacific Ocean"
-            correctAnswer = "D"
-        },
-        QuizQuestionState().apply {
-            questionText = "Who wrote 'Romeo and Juliet'?"
-            options[0].value = "Charles Dickens"
-            options[1].value = "William Shakespeare"
-            options[2].value = "Mark Twain"
-            options[3].value = "Jane Austen"
-            correctAnswer = "B"
         }
     )
 
